@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>{{title.index}} | {{app.title}}</title>
+{% endblock %}
+
+{% block main %}
+<main>
+    <form class="diary-form" action="">
+        <div>
+            <div>
+                <h2 class="diary-form" for="select-emotion">{{ text.select_emotion }}</h2>
+                <!-- <select name="selected-emotion" id="select-emotion"> -->
+                <div>
+                    {% for emotion in emotions %}
+                        {{ emotion }}
+                        <input type="checkbox" name="{{ emotion }}" id="">
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <label for="emotion-description">{{ text.emotion_description }}</label>
+                <textarea name="" id="emotion-description" cols="30" rows="10" placeholder=""></textarea>
+            </div>
+        </div>
+
+        <div>
+            <p>さらにくわしく</p>
+            <dl>
+                <dt>仕事の忙しさ</dt>
+                <dd></dd>
+            </dl>
+        </div>
+    </form>
+</main>
+{% endblock %}
