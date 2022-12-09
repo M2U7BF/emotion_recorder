@@ -1,0 +1,11 @@
+[
+    {
+        "model": "website.emotionrecords",
+        "pk": 1,
+        "fields": {
+            "emotion": 1,
+            "emotion_cause": "テストデータ~テストデータ~テストデータ~テストデータ~テストデータ~",
+            "entered_at": "2018-10-31T00:23:18.934Z"
+        }
+    }
+]

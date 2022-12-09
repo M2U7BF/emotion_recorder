@@ -1,58 +1,47 @@
 [
-    // emotion
     {
         "model": "website.emotion",
         "pk": 1,
         "fields": {
             "emotion_name": "ワクワク･興奮",
             "emotion_type" : "心惹かれる",
-            "emotion_point" : ""
+            "emotion_point" : "5"
         }
     },
     {
         "model": "website.emotion",
-        "pk": 1,
+        "pk": 2,
         "fields": {
             "emotion_name": "平穏",
             "emotion_type" : "",
-            "emotion_point" : ""
+            "emotion_point" : "4"
         }
     },
     {
         "model": "website.emotion",
-        "pk": 1,
+        "pk": 3,
         "fields": {
             "emotion_name": "怒り",
             "emotion_type" : "",
-            "emotion_point" : ""
+            "emotion_point" : "3"
         }
     },
     {
         "model": "website.emotion",
-        "pk": 1,
+        "pk": 4,
         "fields": {
             "emotion_name": "不安",
             "emotion_type" : "",
-            "emotion_point" : ""
+            "emotion_point" : "2"
         }
     },
     {
         "model": "website.emotion",
-        "pk": 1,
+        "pk": 5,
         "fields": {
             "emotion_name": "無気力･絶望･虚無",
             "emotion_type" : "",
-            "emotion_point" : ""
-        }
-    },
-    // emotion_records
-    {
-        "model": "website.emotion_records",
-        "pk": 2,
-        "fields": {
-            "emotion_id": 1,
-            "emotion_cause": "テストデータ~テストデータ~テストデータ~テストデータ~テストデータ~",
-            "entered_at": "2018-10-31 00:23:18.934519"
+            "emotion_point" : "1"
         }
     }
 ]
