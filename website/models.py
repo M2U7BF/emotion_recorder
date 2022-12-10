@@ -3,7 +3,7 @@ from django.db import models
 class Emotion(models.Model):
     emotion_name = models.CharField(max_length=50)
     emotion_type = models.CharField(max_length=50)
-    emotion_point = models.SmallIntegerField(max_length=2)
+    emotion_point = models.SmallIntegerField()
 
 class EmotionRecords(models.Model):
     emotion_id = models.ForeignKey(Emotion, on_delete=models.CASCADE)
