@@ -1,12 +1,16 @@
 # from . import works, activities, study, vision
 
 # 全般
+from website.models import Emotion
+
+
 app={
     "title": "emotion records"
 }
 # TODO page.titleとする
 title={
-    "index": "トップページ"
+    "index": "トップページ",
+    "timeline": "過去データ一覧画面"
 }
 emotions=["ワクワク","のどか","怒り","悲しい","虚無"]
 
@@ -22,7 +26,7 @@ error={
 PARAMS ={
     "app": app,
     "title": title,
-    "emotions": emotions,
+    "emotions": Emotion.objects.all(),
     "username": "kamei-apple-monster",
     "text": text,
     "error": error,
