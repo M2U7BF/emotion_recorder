@@ -1,13 +1,22 @@
+import datetime
+from django.shortcuts import render
+from django.urls import reverse_lazy
+
+from website.models import Emotion, EmotionRecords
 from .const import common
-from django.views.generic import TemplateView
 
-class IndexView(TemplateView):
-    template_name = "index.html"
+def index(request):
+    ctxt = common.PARAMS
+    if request.method == "POST":
+        data = request.POST
+        emotion_id = data.get("emotion_id")
+        emotion = Emotion.objects.get(pk=emotion_id)
+        emotion_cause = data.get("emotion_description")
+        now = datetime.datetime.now()
 
-    def get_context_data(self):
-        ctxt = super().get_context_data() # 辞書型になっている
-        ctxt = common.PARAMS
-        return ctxt
+        emotion_record = EmotionRecords(emotion_id=emotion, emotion_cause=emotion_cause, entered_at=now)
+        # emotion_record.emotion_cause = emotion_cause
+        # emotion_record.entered_at = now
 
-# class AboutView(TemplateView):
-#     template_name = "about.html"
+        # emotion_record.save()
+    return render(request, "index.html", ctxt)
