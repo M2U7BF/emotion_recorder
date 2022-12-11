@@ -1,6 +1,8 @@
 import datetime
+import json
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.core import serializers
 
 from website.models import Emotion, EmotionRecords
 from .const import common
@@ -25,3 +27,9 @@ def timeline(request):
     common.PARAMS["emotion_records"] = EmotionRecords.objects.all()
     ctxt = common.PARAMS
     return render(request, "timeline.html", ctxt)
+
+def analysis(request):
+    common.PARAMS["emotions_json"] = serializers.serialize("json", Emotion.objects.all())
+    common.PARAMS["data_json"] = serializers.serialize("json", EmotionRecords.objects.all())
+    ctxt = common.PARAMS
+    return render(request, "analysis.html", ctxt)
