@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{title.timeline}} | {{app.title}}</title>
+{% endblock %}
+
+{% block main %}
+<main>
+    <form class="diary-form" action="/" method="post">
+        {% csrf_token %}
+        <div>
+            <div>
+                <h2 class="diary-form" for="select-emotion">
+                    {{ text.select_emotion }}
+                </h2>
+                <!-- <select name="selected-emotion" id="select-emotion"> -->
+                <div>
+                    {% for emotion in emotions %}
+                    {{ emotion.emotion_name }}
+                    <input type="checkbox" name="emotion_id"
+                        id="{{ emotion.emotion_name }}" value="{{ emotion.pk }}">
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <label for="emotion-description">{{ text.emotion_description }}</label>
+                <textarea name="emotion_description" id="emotion-description"
+                    cols="30" rows="10"
+                    placeholder=""></textarea>
+            </div>
+        </div>
+
+        <div>
+            <p>さらにくわしく</p>
+            <dl>
+                <dt>仕事の忙しさ</dt>
+                <dd></dd>
+            </dl>
+        </div>
+        <div>
+            <input type="submit" value="登録">
+        </div>
+    </form>
+</main>
+{% endblock %}
