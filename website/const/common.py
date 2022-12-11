@@ -5,7 +5,7 @@ from website.models import Emotion
 
 
 app={
-    "title": "emotion records"
+    "title": "きもちレコーダー"
 }
 # TODO page.titleとする
 title={
