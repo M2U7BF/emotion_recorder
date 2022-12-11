@@ -10,9 +10,9 @@ app={
 # TODO page.titleとする
 title={
     "index": "トップページ",
-    "timeline": "過去データ一覧画面"
+    "timeline": "過去データ一覧画面",
+    "analysis":"分析画面"
 }
-emotions=["ワクワク","のどか","怒り","悲しい","虚無"]
 
 text={
     "select_emotion" : "感情を選択",
