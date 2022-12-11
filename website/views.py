@@ -18,5 +18,10 @@ def index(request):
         # emotion_record.emotion_cause = emotion_cause
         # emotion_record.entered_at = now
 
-        # emotion_record.save()
+        emotion_record.save()
     return render(request, "index.html", ctxt)
+
+def timeline(request):
+    common.PARAMS["emotion_records"] = EmotionRecords.objects.all()
+    ctxt = common.PARAMS
+    return render(request, "timeline.html", ctxt)
