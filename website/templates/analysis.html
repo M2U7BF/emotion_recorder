@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{title.analysis}} | {{app.title}}</title>
+{% endblock %}
+
+{% block main %}
+<main>
+    <div>
+        <canvas id="sushi_circle" width="500" height="500"></canvas>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+<script>
+    window.onload = function () {
+        const emotions = JSON.parse('{{ emotions_json|safe }}');
+        const emotion_records = JSON.parse('{{ data_json|safe }}');
+
+        let emotion_names = [];
+        emotions.forEach(emotion => {
+            emotion_names.push(emotion["fields"]["emotion_name"]);
+        });
+
+        // 固定長で初期化する
+        let emotion_counts = new Array(emotion_names.length);
+        // 全要素を0で初期化する
+        emotion_counts.fill(0);
+
+        emotion_records.forEach(emotion_record => {
+            emotion_id = Number(JSON.stringify(emotion_record["fields"]["emotion_id"]));
+            emotion_counts[emotion_id-1]++;
+        });
+
+        let context = document.querySelector("#sushi_circle").getContext('2d')
+      new Chart(context, {
+        type: 'pie',
+        data: {
+          labels: emotion_names,
+          datasets: [{
+            backgroundColor: ["#fa8072", "#00ff7f", "#00bfff", "#a9a9a9", "#f5f5f5"],
+            data: emotion_counts
+          }]
+        },
+        options: {
+          responsive: false,
+          plugins: {
+                title: {
+                display: true,
+                text: '総合的な感情の割合'
+                },
+            },
+        }
+      });
+    }
+  </script>
+{% endblock %}
