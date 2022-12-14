@@ -26,4 +26,8 @@ main {
 .footer {
   position: absolute; /*←絶対位置*/
   bottom: 0; /*下に固定*/
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
 }/*# sourceMappingURL=common.css.map */
