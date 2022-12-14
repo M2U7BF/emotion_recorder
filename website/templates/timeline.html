@@ -3,21 +3,27 @@
 
 {% block title %}
 <title>{{title.timeline}} | {{app.title}}</title>
+<link rel="stylesheet" href="{% static 'css/timeline.css' %}">
 {% endblock %}
 
 {% block main %}
 <main>
-    <div>
-        <dl>
-            {% for emotion_record in emotion_records %}
-            <dt>感情名</dt>
-            <dd>{{ emotion_record.emotion_id.emotion_name }}</dd>
-            <dt>詳細</dt>
-            <dd>{{ emotion_record.emotion_cause }}</dd>
-            <dt>登録日時</dt>
-            <dd>{{ emotion_record.entered_at | date:"Y/n/j H:i:s" }}</dd>
-            {% endfor %}
+    <div class="record-card-container">
+        {% for emotion_record in emotion_records %}
+        <dl class="record-card">
+            <div class="record-card__emotion-name">
+                <dt class="record-card__emotion-name__title">感情名</dt>
+                <dd class="record-card__emotion-name__body">{{ emotion_record.emotion_id.emotion_name }}</dd>
+            </div>
+            <div class="record-card__emotion-description">
+                <!-- <dt class="record-card__emotion-description__title">詳細</dt> -->
+                <dd class="record-card__emotion-description__body">{{ emotion_record.emotion_cause }}</dd>
+            </div>
+            <div class="record-card__entered-at">
+                <dd class="record-card__entered-at__body">{{ emotion_record.entered_at | date:"Y/n/j H:i:s" }}</dd>
+            </div>
         </dl>
+        {% endfor %}
     </div>
 </main>
 {% endblock %}

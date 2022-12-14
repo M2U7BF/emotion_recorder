@@ -3,44 +3,59 @@
 
 {% block title %}
 <title>{{title.index}} | {{app.title}}</title>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
 {% block main %}
 <main>
     <form class="diary-form" action="/" method="post">
         {% csrf_token %}
-        <div>
-            <div>
-                <h2 class="diary-form" for="select-emotion">
+        <div class="record-summary">
+            <div class="emotion-group">
+                <h2 class="emotion-group__title" for="select-emotion">
                     {{ text.select_emotion }}
                 </h2>
-                <!-- <select name="selected-emotion" id="select-emotion"> -->
                 <div>
                     {% for emotion in emotions %}
-                    {{ emotion.emotion_name }}
-                    <input type="checkbox" name="emotion_id"
-                        id="{{ emotion.emotion_name }}" value="{{ emotion.pk }}">
+                    <input class="emotion-group__choice" type="radio"
+                            name="emotion_id"
+                            id="{{ emotion.emotion_name }}"
+                            value="{{ emotion.pk }}">
+                    <label class="emotion-group__label"
+                    for="{{ emotion.emotion_name }}">
+                        <span class="emotion-group__body__text">
+                            {{ emotion.emotion_name }}
+                        </span>
+                    </label>
                     {% endfor %}
                 </div>
             </div>
-            <div>
-                <label for="emotion-description">{{ text.emotion_description }}</label>
-                <textarea name="emotion_description" id="emotion-description"
-                    cols="30" rows="10"
-                    placeholder=""></textarea>
+            <div class="emotion-description">
+                <label class="emotion-description__title"
+                    for="emotion-description">
+                    {{ text.emotion_description }}
+                </label>
+                <textarea class="emotion-description__body"
+                    name="emotion_description"
+                    id="emotion-description"
+                    cols="100" rows="10"
+                    placeholder="{{ text.placeholder.emotion_description }}"></textarea>
             </div>
-        </div>
 
-        <div>
-            <p>さらにくわしく</p>
-            <dl>
-                <dt>仕事の忙しさ</dt>
-                <dd></dd>
-            </dl>
-        </div>
-        <div>
-            <input type="submit" value="登録">
-        </div>
-    </form>
-</main>
-{% endblock %}
+            <div class="record-details">
+                <h2 class="record-details__title">
+                    さらにくわしく
+                </h2>
+                <dl class="record-details__body">
+                    <dt>仕事の忙しさ</dt>
+                    <dd></dd>
+                </dl>
+            </div>
+            <div class="record-operation">
+                <input class="record-operation__submit-button"
+                    type="submit"
+                    value="登録">
+            </div>
+        </form>
+    </main>
+    {% endblock %}
