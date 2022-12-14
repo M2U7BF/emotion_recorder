@@ -1,0 +1,51 @@
+@charset "UTF-8";
+body {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding: 0px 60px;
+}
+
+.header {
+  background: url(../img/header_image.jpg) repeat-x 0% 30%;
+}
+.header__container {
+  display: flex;
+  justify-content: space-around;
+}
+.header__container__site-title__link {
+  color: inherit;
+  text-decoration: none;
+}
+.header__container .navbar {
+  padding-top: 30px;
+}
+
+.footer {
+  position: absolute; /*←絶対位置*/
+  bottom: 0; /*下に固定*/
+}
+
+.record-card {
+  border: solid #ccc;
+  margin: 5px 0px;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.record-card dt {
+  float: left;
+  background-color: rgb(233, 233, 233);
+  padding: 0px 5px;
+  margin-right: 0.5em;
+}
+.record-card__emotion-description__body {
+  overflow-wrap: break-word;
+}
+.record-card__entered-at {
+  color: rgb(136, 136, 136);
+  font-size: 8px;
+  margin-top: 10px;
+}/*# sourceMappingURL=timeline.css.map */

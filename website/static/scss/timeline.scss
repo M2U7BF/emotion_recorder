@@ -1,0 +1,30 @@
+@import "common.scss";
+
+.record-card{
+    border: solid #ccc;
+    margin: 5px 0px;
+    padding: 5px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    dt{
+        float: left;
+        background-color: rgb(233, 233, 233);
+        padding: 0px 5px;
+        margin-right: 0.5em;
+    }
+    &__emotion-description{
+        &__body{
+            overflow-wrap: break-word;
+        }
+    }
+    &__entered-at{
+        color: rgb(136, 136, 136);
+        font-size: 8px;
+        margin-top: 10px;
+        &__body{
+            // margin: 0;
+        }
+    }
+}
