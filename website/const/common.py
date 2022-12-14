@@ -14,10 +14,15 @@ title={
     "analysis":"分析画面"
 }
 
+placeholder={
+    "emotion_description": " "*5+"きもちの原因を記入"
+}
+
 text={
     "select_emotion" : "感情を選択",
     "emotion_description" : "くわしく",
-    "copy_right": "© : 2022 | AllRights Reserved."
+    "copy_right": "© : 2022 | AllRights Reserved.",
+    "placeholder": placeholder
 }
 error={
     "cannot_load_image":"画像が読み込めませんでした",
