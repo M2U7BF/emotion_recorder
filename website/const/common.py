@@ -21,7 +21,7 @@ placeholder={
 text={
     "select_emotion" : "感情を選択",
     "emotion_description" : "くわしく",
-    "copy_right": "© : 2022 | AllRights Reserved.",
+    "copy_right": "© 2022 Kazuya Kamei",
     "placeholder": placeholder
 }
 error={
