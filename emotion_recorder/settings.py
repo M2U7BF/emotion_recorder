@@ -1,4 +1,7 @@
-from .settings_local import *
+try:
+    from .settings_local import *
+except ModuleNotFoundError as MNError:
+    from .settings_heroku import *
 
 """
 Django settings for emotion_recorder project.
