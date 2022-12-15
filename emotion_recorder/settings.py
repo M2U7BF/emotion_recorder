@@ -1,4 +1,6 @@
 import os
+
+# 環境ごとに設定ファイルを読み込む
 try:
     from .settings_local import *
 except ModuleNotFoundError as MNError:
