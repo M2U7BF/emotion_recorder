@@ -6,7 +6,6 @@ main{
     padding: 0px 60px;
 }
 
-// ヘッダーのスタイル
 .header{
     background: url(../img/header_image.jpg) repeat-x 0% 30%;
 
@@ -22,13 +21,20 @@ main{
         .navbar{
             padding-top: 30px;
 
-            // &__link{
-            // }
+            &__link{
+                text-decoration: none;
+                color: #000000;
+
+                margin-left: 1em;
+            }
+            &__link:active {
+            color: #000000;
+            }
         }
     }
 }
 
-// フッターのスタイル
+
 .footer{
     position: absolute;/*←絶対位置*/
     bottom: 0; /*下に固定*/
@@ -45,4 +51,5 @@ main{
     padding-left: 1em;
     font-size: 20px;
     color: inherit;
+    background-color: #e4f9fe;
 }

@@ -22,6 +22,14 @@ main {
 .header__container .navbar {
   padding-top: 30px;
 }
+.header__container .navbar__link {
+  text-decoration: none;
+  color: #000000;
+  margin-left: 1em;
+}
+.header__container .navbar__link:active {
+  color: #000000;
+}
 
 .footer {
   position: absolute; /*←絶対位置*/
