@@ -24,7 +24,8 @@ def index(request):
     return render(request, "index.html", ctxt)
 
 def timeline(request):
-    common.PARAMS["emotion_records"] = EmotionRecords.objects.all()
+    emotion_records = EmotionRecords.objects.order_by("entered_at").reverse()
+    common.PARAMS["emotion_records"] = emotion_records
     ctxt = common.PARAMS
     return render(request, "timeline.html", ctxt)
 
